@@ -15,9 +15,12 @@
 ;/***********************************************************************************************************************************/
 
 ;/INCLUDES----------------------------------------------------------------------------------------------------------------------------
-    .cdecls C,LIST, "../globals.h"
-    .cdecls C,LIST, "../Math/crc16.h"
-    .cdecls C,LIST, "rfid.h"
+    .cdecls C,LIST
+    %{
+       #include "../globals.h"
+       #include "../Math/crc16.h"
+       #include "rfid.h"
+    %}
 	.def  WISP_doRFID
 	.global handleAck, handleQR, handleReqRN, handleRead, handleWrite, handleSelect, WISP_doRFID, TxClock, RxClock
 
